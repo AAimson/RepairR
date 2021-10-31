@@ -1,0 +1,43 @@
+﻿@page "/bookings"
+@using RepairR.Contracts.Dtos
+@inject HttpClient Http
+
+<PageTitle>Bookings</PageTitle>
+
+<h1>Booking List</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (bookings == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in bookings)
+            {
+                <tr>
+                    <td>@booking.created.ToShortDateString()</td>
+                    <td>@booking.reference</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private BookingDto[]? bookings;
+
+    protected override async Task OnInitializedAsync()
+    {
+        bookings = await Http.GetFromJsonAsync<BookingDto[]>("api/bookings");
+    }
+}

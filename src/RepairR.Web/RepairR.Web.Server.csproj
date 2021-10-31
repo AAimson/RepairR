@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>RepairR.Web.Server-FDB17C53-D4FE-446D-A17C-F51E3B8B5216</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.0-rc.2.21480.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RepairR.Application\RepairR.Application.csproj" />
+    <ProjectReference Include="..\RepairR.Infrastructure\RepairR.Infrastructure.csproj" />
+    <ProjectReference Include="..\RepairR.Shared\RepairR.Shared.csproj" />
+    <ProjectReference Include="..\RepairR.Web.Client\RepairR.Web.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0-rc.2.21480.10" />
+    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="6.0.0-rc.2.21480.10" />
+  </ItemGroup>
+
+</Project>
